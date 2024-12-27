@@ -4,6 +4,8 @@ import "../index.css";
 import BookCard from "./BookCard";
 // import Carusel from "../components/Carusel.jsx";
 import { Books } from "./Date";
+// import { addFunction } from "./ShopCard";
+// import { handelArlet } from "./AddLogic";
 const SectionOfBooks = [
   "The CLUB",
   "New products",
@@ -16,7 +18,7 @@ const SectionOfBooks = [
   "Shops and contacts",
   "Delivery and payment",
 ];
-const SearchMenu = () => {
+const SearchMenu = ({ addFunction, handelArlet }) => {
   const [dane, setDane] = useState(Books);
   const [isActive, setIsActive] = useState(false);
 
@@ -116,10 +118,16 @@ const SearchMenu = () => {
         }}
       >
         {dane.map((items) => {
-          return <BookCard key={items.id} Books={items} />;
+          return (
+            <BookCard
+              key={items.id}
+              Books={items}
+              // add={addFunction}
+              // alret={handelArlet}
+            />
+          );
         })}
       </ul>
-      {/* <Carusel /> */}
     </div>
   );
 };
