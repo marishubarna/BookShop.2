@@ -24,9 +24,7 @@ const SearchMenu = ({ addFunction, handelArlet }) => {
 
   const BooksSearchHandel = (query) => {
     const BooksCopy = [...Books];
-    setDane((prev) =>
-      BooksCopy.filter((book) => book.bookName.includes(query))
-    );
+    setDane((prev) => BooksCopy.filter((book) => book.bookName.includes(query)));
   };
 
   const filterBooks200 = (cost) => {
@@ -98,8 +96,8 @@ const SearchMenu = ({ addFunction, handelArlet }) => {
           <input
             id="searchInput"
             onChange={(e) => BooksSearchHandel(e.target.value)}
-            onFocus={() => isActive(true)}
-            onBlur={() => isActive(false)}
+            onFocus={() => setIsActive(true)}
+            onBlur={() => setIsActive(false)}
             placeholder="Search"
             type="search"
             class="input"
@@ -115,17 +113,9 @@ const SearchMenu = ({ addFunction, handelArlet }) => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-        }}
-      >
+        }}>
         {dane.map((items) => {
-          return (
-            <BookCard
-              key={items.id}
-              Books={items}
-              // add={addFunction}
-              // alret={handelArlet}
-            />
-          );
+          return <BookCard key={items.id} Books={items} />;
         })}
       </ul>
     </div>

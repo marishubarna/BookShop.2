@@ -9,7 +9,7 @@ export const Books = [
     img: "https://i.pinimg.com/474x/5b/3c/6d/5b3c6d19807386304c503c2c346c9155.jpg ",
   },
   {
-    id: 213,
+    id: 214,
     bookName: "Bride",
     author: "hdhdhdhdjdjkd",
     genre: "Biografic",
@@ -18,7 +18,7 @@ export const Books = [
     img: " https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id: 215,
     bookName: "Not in Love",
     author: "hdhdhdhdjdjkd",
     genre: "romantic",
@@ -27,7 +27,7 @@ export const Books = [
     img: " https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id: 216,
     bookName: "The Wedding People",
     author: "hdhdhdhdjdjkd",
     genre: "romantic",
@@ -36,7 +36,7 @@ export const Books = [
     img: " https://placehold.co/150x150",
   },
   {
-    id: 13,
+    id: 217,
     bookName: "I Hope This Doesn't Find You",
     author: "hdhdhdhdjdjkd",
     genre: "fantastic",
@@ -45,7 +45,7 @@ export const Books = [
     img: "https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id: 218,
     bookName: "A Song to Drown Rivers",
     author: "hdhdhdhdjdjkd",
     genre: "fantastic",
