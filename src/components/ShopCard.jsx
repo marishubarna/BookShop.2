@@ -18,9 +18,7 @@ const ShopCard = () => {
 
   // const handelArlet = () => {
   //   if (pickedBooks.length > 0) {
-  //     alert(
-  //       "In your Cart: " + pickedBooks.map((items) => items.bookName).join(", ")
-  //     );
+  //     alert("In your Cart: " + pickedBooks.map((items) => items.bookName).join(", "));
   //   }
   // };
 
