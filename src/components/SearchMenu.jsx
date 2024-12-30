@@ -122,7 +122,7 @@ const SearchMenu = ({ addFunction, handelArlet }) => {
             <BookCard
               key={items.id}
               Books={items}
-              // add={addFunction}
+              add={addFunction}
               // alret={handelArlet}
             />
           );

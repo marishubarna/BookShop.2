@@ -1,6 +1,6 @@
 export const Books = [
   {
-    id: 213,
+    id: 767,
     bookName: "Harry Potter",
     author: "hdhdhdhdjdjkd",
     cost: 200,
@@ -9,7 +9,7 @@ export const Books = [
     img: "https://i.pinimg.com/474x/5b/3c/6d/5b3c6d19807386304c503c2c346c9155.jpg ",
   },
   {
-    id: 213,
+    id: 132,
     bookName: "Bride",
     author: "hdhdhdhdjdjkd",
     genre: "Biografic",
@@ -18,7 +18,7 @@ export const Books = [
     img: " https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id: 873,
     bookName: "Not in Love",
     author: "hdhdhdhdjdjkd",
     genre: "romantic",
@@ -27,7 +27,7 @@ export const Books = [
     img: " https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id: 234,
     bookName: "The Wedding People",
     author: "hdhdhdhdjdjkd",
     genre: "romantic",
@@ -45,7 +45,7 @@ export const Books = [
     img: "https://placehold.co/150x150",
   },
   {
-    id: 213,
+    id:544,
     bookName: "A Song to Drown Rivers",
     author: "hdhdhdhdjdjkd",
     genre: "fantastic",

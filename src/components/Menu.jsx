@@ -2,14 +2,15 @@ import React from "react";
 // import { Carousel } from "@material-tailwind/react";
 import "../index.css";
 import Logo from "../assets/images2.png";
+import { Link } from "react-router-dom";
 const MenuList = [
   "The CLUB",
   "New products",
   "Authors",
   "Видавництва",
   "TOP books",
-  "Pre-sales",
-  "Promotions",
+  [<Link to={"/shop"}>Your Car </Link>],
+  [<Link to={"/signUp"}>Sign Up</Link>],
   "Blog",
   "Shops and contacts",
   "Delivery and payment",
