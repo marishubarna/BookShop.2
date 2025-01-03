@@ -1,64 +1,129 @@
 import React from "react";
-import { Books } from "./Date";
 import { useStore } from "../store/storeZustan";
 
-const ShopCard = () => {
-  // const [pickedBooks, setPickedBooks] = useState([]);
-  const { cart, MoresBook, LessBook, removeBooks, addBook } = useStore(
-    (state) => ({
-      cart: state.cart,
-      addBook: state.addBook,
-      MoresBook: state.MoresBook,
-      LessBook: state.LessBook,
-      removeBooks: state.removeBooks,
-    })
-  );
-
-  // const addFunction = (book) => {
-  //   setPickedBooks([...pickedBooks, book]);
-  // };
-
-  // const minus = () => {
-  //   setPickedBooks(pickedBooks.slice(0, -1));
-  // };
-
-  // const reset = () => {
-  //   setPickedBooks([]);
-  // };
-
-  // const handelArlet = () => {
-  //   if (pickedBooks.length > 0) {
-  //     alert(
-  //       "In your Cart: " + pickedBooks.map((items) => items.bookName).join(", ")
-  //     );
-  //   }
-  // };
+const ShopCard = ({ close }) => {
+  const cart = useStore((state) => state.cart);
+  const removeBooks = useStore((state) => state.removeBooks);
+  const moresBook = useStore((state) => state.MoresBook);
+  const lessBook = useStore((state) => state.LessBook);
 
   return (
-    <div>
-      <div className="ShopListDiv">
-        <h1>Picked books: {cart.length}</h1>
-        <div className="pickedCostTitle">
-          {cart.map((book, index) => (
-            <h2 key={index} className="TitleShopBook">
+    <form
+      style={{
+        position: "absolute",
+        top: 15,
+        right: 155,
+        padding: "36px 20px",
+        backgroundColor: "#f5f4f0",
+        border: "1px solid #ccc",
+        borderRadius: "10px",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+      }}>
+      <button
+        type="button"
+        onClick={() => close(false)}
+        style={{
+          position: "absolute",
+          top: 10,
+          right: 10,
+          backgroundColor: "transparent",
+          border: "none",
+          fontSize: "16px",
+          cursor: "pointer",
+          transition: "color 0.2s",
+        }}
+        onMouseEnter={(e) => (e.target.style.color = "red")}
+        onMouseLeave={(e) => (e.target.style.color = "black")}>
+        &times;
+      </button>
+      <h6 style={{ textAlign: "center" }}>Picked books: {cart.length}</h6>
+      <ul
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          listStyle: "none",
+          padding: 0,
+          margin: 0,
+        }}>
+        {cart.map((book, index) => (
+          <li
+            key={index}
+            style={{
+              margin: "10px",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "10px",
+            }}>
+            <p>
               {book.bookName} (Quantity: {book.quantity})
-            </h2>
-          ))}
-        </div>
-        <div className="buttons">
-          {cart.length > 0 && (
-            <>
-              <button onClick={() => MoresBook(cart[0].id)}>+</button>
-              <button onClick={() => LessBook(cart[0].id)}>-</button>
-              <button onClick={() => removeBooks(cart[0].id)}>Remove</button>
-            </>
-          )}
-        </div>
-        <div className="AddBook">
-          <button onClick={() => addBook(Books[0])}>Add Book</button>
-        </div>
+            </p>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              {cart.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    style={{
+                      margin: "10px",
+                      padding: "10px 20px",
+                      border: "none",
+                      borderRadius: "5px",
+                      backgroundColor: "#4CAF50",
+                      color: "white",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => moresBook(book.id)}>
+                    +
+                  </button>
+                  <button
+                    type="button"
+                    style={{
+                      margin: "10px",
+                      padding: "10px 20px",
+                      border: "none",
+                      borderRadius: "5px",
+                      backgroundColor: "#4CAF50",
+                      color: "white",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => lessBook(book.id)}>
+                    -
+                  </button>
+                  <button
+                    type="button"
+                    style={{
+                      margin: "10px",
+                      padding: "10px 20px",
+                      border: "none",
+                      borderRadius: "5px",
+                      backgroundColor: "#4CAF50",
+                      color: "white",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => removeBooks(book.id)}>
+                    Remove
+                  </button>
+                </>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          type="submit"
+          style={{
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "5px",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            cursor: "pointer",
+          }}>
+          Buy Book
+        </button>
       </div>
-    </div>
+    </form>
   );
 };
 
